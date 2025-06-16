@@ -20,6 +20,7 @@ public class GameLaunchController {
 
     private final GameLaunchService gameLaunchService;
 
+    //TODO: Use DTO instead of @RequestParam
     @GetMapping("/launch")
     public GameLaunchResponseDTO launch(@RequestParam Mode mode,
                                         @RequestParam String session,

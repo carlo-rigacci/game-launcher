@@ -1,6 +1,6 @@
 package com.faintful.casino.launcher.controller;
 
-import com.faintful.casino.launcher.model.GameLaunchResponseDTO;
+import com.faintful.casino.launcher.model.GameLaunchResponseDto;
 import com.faintful.casino.launcher.services.GameLaunchService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -52,12 +52,12 @@ public class GameLaunchControllerTest {
                 .queryParam("device", "DESKTOP")
                 .accept(MediaType.APPLICATION_JSON);
 
-        GameLaunchResponseDTO gameLaunchResponseDTO = GameLaunchResponseDTO.builder()
+        GameLaunchResponseDto gameLaunchResponseDTO = GameLaunchResponseDto.builder()
                 .url("https://example.com/play")
                 .provider("A")
-                .aamsId(UUID.randomUUID())
+                .aamsId("aamsId")
                 .type("application/json")
-                .clientId(UUID.randomUUID())
+                .clientId("clientId")
                 .build();
 
         given(gameLaunchService.launch(any(), any(), any(), any(), any()))
